@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Shaqred.Models.Product>
+﻿@model IEnumerable<Shared.Models.Product>
 
 @{
     ViewData["Title"] = "Index";
@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Edit", "Edit", new { Views_Products_Index = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
