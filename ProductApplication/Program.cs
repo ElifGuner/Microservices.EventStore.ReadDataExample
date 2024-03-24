@@ -1,4 +1,5 @@
 using Shared;
+using Shared.Services;
 using Shared.Services.Abstractions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<IEventStoreService, EventStoreService>();
+builder.Services.AddSingleton<IMongoDBService, MongoDBService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

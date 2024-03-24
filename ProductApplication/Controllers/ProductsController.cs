@@ -86,7 +86,7 @@ namespace ProductApplication.Controllers
                 await _eventStoreService.AppendToStreamAsync("products-stream", new[]
                 { _eventStoreService.GenerateEventData(countIncreasedEvent)});
             }
-             return null;
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -117,7 +117,7 @@ namespace ProductApplication.Controllers
                 await _eventStoreService.AppendToStreamAsync("products-stream", new[]
                 { _eventStoreService.GenerateEventData(priceIncreasedEvent)});
             }
-            return null;
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -137,7 +137,7 @@ namespace ProductApplication.Controllers
                 { _eventStoreService.GenerateEventData(availabilityChangedEvent)});
             }
 
-            return null;
+            return RedirectToAction("Index");
         }
     }
 }
